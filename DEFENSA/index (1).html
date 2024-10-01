@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Minimalista con Navegación Interna Corregida</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo, .menu, .slider, .tabla, .card, .mapa, .formulario, .footer-section {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .logo, .menu, .slider {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .logo:hover, .menu:hover, .slider:hover, .tabla:hover, .card:hover, .mapa:hover, .formulario:hover, .footer-section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        .menu {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            z-index: 1000;
+        }
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+        .menu a:hover {
+            border-color: #333;
+        }
+        .slider {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLnqRGsOXYnit3nIujSDu_UFEKoZ7WGZgVw&s');
+            background-size: cover;
+            background-position: center;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .tabla, .cards {
+            width: 48%;
+        }
+        .tabla, .card, .mapa, .formulario {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: white;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            width: 30%;
+            padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        section {
+            padding-top: 60px;
+            margin-top: -60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo fade-in">Mi Logo</div>
+        <nav class="menu fade-in">
+            <a onclick="scrollToSection('inicio')">Inicio</a>
+            <a onclick="scrollToSection('servicios')">Servicios</a>
+            <a onclick="scrollToSection('productos')">Productos</a>
+            <a onclick="scrollToSection('ubicacion')">Ubicación</a>
+            <a onclick="scrollToSection('contacto')">Contacto</a>
+        </nav>
+        
+        <section id="inicio">
+            <div class="slider fade-in">Bienvenido a Nuestro Sitio</div>
+        </section>
+        
+        <section id="servicios">
+            <div class="content">
+                <div class="tabla fade-in">
+                    <h2>Nuestros Servicios</h2>
+                    <p>Aquí puedes incluir una lista de tus servicios principales.</p>
+                </div>
+                <div class="cards">
+                    <div class="card fade-in" style="background-image: url('https://cdn-3.expansion.mx/dims4/default/592b0f1/2147483647/strip/true/crop/1200x630+0+0/resize/1200x630!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F62%2Fc9%2Fb4fa9d784717b9d10424390183ca%2Fproductos-coca-cola-femsa.jpeg');">
+                        <h3>Servicio Destacado</h3>
+                        <p>Descripción de tu servicio más popular o innovador.</p>
+                    </div>
+                    <div class="card fade-in" style="background-image: url('https://img.lalr.co/cms/2017/04/12033800/Productos_Vendidos_CocaCola1204.jpg?size=xl&ratio=r40_21');">
+                        <h3>Servicio 1</h3>
+                        <p>Breve descripción del servicio 1.</p>
+                    </div>
+                    <div class="card fade-in" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyusaJqDaeLn602TLuvXClVWoC9PJalGycMQ&shttps://comercialtrevino.com/images/uploads/productos-gancho-tienda-de-abarrotes-1.jpg');">
+                        <h3>Servicio 2</h3>
+                        <p>Breve descripción del servicio 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="productos">
+            <div class="content">
+                <div class="tabla fade-in">
+                    <h2>Nuestros Productos</h2>
+                    <p>Lista de productos principales o categorías de productos.</p>
+                </div>
+                <div class="cards">
+                    <div class="card fade-in" style="background-image: url('https://abarrotero.com/wp-content/uploads/2019/04/productos_tienda_abarrotes_abarrotero.jpg');">
+                        <h3>Producto Destacado</h3>
+                        <p>Información sobre tu producto más vendido o nuevo lanzamiento.</p>
+                    </div>
+                    <div class="card fade-in" style="background-image: url('https://cdn-3.expansion.mx/dims4/default/592b0f1/2147483647/strip/true/crop/1200x630+0+0/resize/1200x630!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F62%2Fc9%2Fb4fa9d784717b9d10424390183ca%2Fproductos-coca-cola-femsa.jpeg');">
+                        <h3>Categoría 1</h3>
+                        <p>Descripción breve de la categoría de productos 1.</p>
+                    </div>
+                    <div class="card fade-in" style="background-image: url('https://img.lalr.co/cms/2017/04/12033800/Productos_Vendidos_CocaCola1204.jpg?size=xl&ratio=r40_21');">
+                        <h3>Categoría 2</h3>
+                        <p>Descripción breve de la categoría de productos 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ubicacion">
+            <div class="content">
+                <div class="tabla fade-in">
+                    <h2>Dónde Encontrarnos</h2>
+                    <p>Información sobre nuestras sucursales o puntos de venta.</p>
+                </div>
+                <div class="mapa fade-in">
+                    <h3>Nuestra Ubicación</h3>
+                    <p>Aquí puedes incluir un mapa o dirección de tu negocio principal.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacto">
+            <div class="content">
+                <div class="tabla fade-in">
+                    <h2>Información de Contacto</h2>
+                    <p>Teléfono, email y redes sociales para contactarnos.</p>
+                </div>
+                <div class="formulario fade-in">
+                    <h3>Contáctanos</h3>
+                    <p>Formulario de contacto o información para que los clientes se comuniquen.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="footer">
+            <div class="footer-section fade-in">
+                <h4>Acerca de Nosotros</h4>
+                <p>Breve información sobre la empresa o el equipo.</p>
+            </div>
+            <div class="footer-section fade-in">
+                <h4>Servicios</h4>
+                <p>Lista rápida de servicios ofrecidos.</p>
+            </div>
+            <div class="footer-section fade-in">
+                <h4>Contacto</h4>
+                <p>Información de contacto rápida.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
